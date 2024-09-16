@@ -1,0 +1,945 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Fixed Navbar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 30px 60px; /* Adjust left and right padding as needed */
+    position: fixed; /* Fixes the navbar to the top */
+    top: 0;
+    width: 100%; /* Ensures the navbar spans the full width */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds shadow for better separation */
+    z-index: 1000; /* Ensures the navbar stays above other content */
+    box-sizing: border-box; /* Includes padding and border in the element's total width and height */
+}
+.logo img {
+    height: 40px;
+    width: auto;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    padding-left: 0;
+    margin: 0; /* Remove any default margin */
+    transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+    overflow: hidden;
+    max-height: none;
+    opacity: 1;
+    flex-direction: row;
+    width: auto;
+    background-color: white;
+}
+.nav-links .nav-link.active {
+    color: #fcb900; /* Change to your preferred color */
+    font-weight: bold; /* Optional: Make the active link bold */
+}
+.nav-links.nav-active {
+    max-height: 300px; /* Adjust based on the number of links */
+    opacity: 1;
+    background-color: #ffffff;
+    
+}
+
+.nav-links li {
+    margin: 0 15px;
+    text-align: center;
+}
+
+.nav-links a {
+    color: black;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #fcb900;
+}
+
+.burger {
+    display: none;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: black;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+.burger.toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.burger.toggle .line2 {
+    opacity: 0;
+}
+
+.burger.toggle .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+/* Hero section styles */
+.hero {
+    position: relative;
+    margin-top: 100px; /* Add margin to account for the fixed navbar height */
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+    background-color: rgba(51, 51, 51, 0.5); /* Semi-transparent background color */
+    background-image: url('img/background.jpg');
+    background-size: cover;
+    background-position: center top; /* Push image down */
+    background-repeat: no-repeat;
+    background-blend-mode: multiply; /* Blend the background color with the image */
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+/* Hero content styling */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    width: 40%; /* Set width to 60% of the hero section */
+    max-width: 800px; /* Set a maximum width to prevent it from becoming too wide */
+    padding: 0 20px;
+    margin: 0 auto; /* Center the content horizontally */
+    box-sizing: border-box;
+}
+
+.hero h1 {
+    font-size: 50px; /* Adjust font size for visibility */
+  
+   
+}
+
+.typing-container {
+    font-size: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    color: #FDD247; /* Text color */
+    height: 40px; /* Height for the container */
+    position: relative;
+    display: inline-block;
+    border-right: 2px solid #FDD247; /* Blinking cursor */
+    animation: blink-caret 0.7s step-end infinite; /* Blinking caret effect */
+}
+
+/* Adjust cursor position closer to the text */
+.typing-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 2px; /* Match the border width */
+    height: 100%;
+    background-color: #FDD247; /* Match the cursor color */
+    animation: blink-caret 0.7s step-end infinite; /* Blinking effect */
+}
+
+/* Blinking cursor effect */
+@keyframes blink-caret {
+    from, to {
+        background-color: transparent;
+    }
+    50% {
+       
+    }
+}
+/* Text select simulation */
+.selected-text {
+    background-color: #333; /* Background color when "selected" */
+    color: #FDD247; /* Text color change when "selected" */
+    display: inline; /* Ensure the background color fits the text width */  
+}
+
+/* Info Section Styles */
+.info-section {
+    padding: 70px 120px;
+    background-color: #f9f9f9;
+    box-sizing: border-box;
+}
+.info-heading{
+    text-align:center;
+    font-size: 35px;
+}
+
+/* Centered Title and Description */
+.services-info {
+    max-width: 1200px; /* Match the width of the navbar */
+    margin: 0 auto; /* Center align */
+    text-align: center; /* Center align text */
+    padding: 0 20px; /* Padding for spacing */
+    box-sizing: border-box;
+}
+
+.services-title {
+    font-size: 36px; /* Title font size */
+    color: #333; /* Title color */
+    margin-bottom: 20px; /* Space below the title */
+}
+
+.services-description {
+    font-size: 18px; /* Description font size */
+    color: #666; /* Description color */
+    line-height: 1.6; /* Line height for readability */
+    margin-bottom: 20px; /* Space below the description */
+}
+
+/* Services Container Styles */
+.services-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    background-color: transparent;
+    box-sizing: border-box;
+}
+
+.service-item {
+    flex: 1 1 300px;
+    max-width: 300px;
+    text-align: center;
+   /*  background-color: #f4f4f4; */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.service-item svg{
+    width: 100px;
+}
+.service-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.service-title {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.service-description {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.5;
+}
+.cta-container {
+    text-align: center; /* Center align the button */
+    padding: 20px;
+    background-color: #f9f9f9; /* Background color for the CTA section */
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #FDD247; /* Background color */
+    color: #fff; /* Text color */
+    font-size: 18px; /* Font size */
+    padding: 15px 35px; /* Padding for the button */
+    border-radius: none; /* Rounded corners */
+    text-decoration: none; /* Remove underline from link */
+    transition: background-color 0.3s; /* Smooth transition on hover */
+}
+
+.cta-button:hover {
+    box-shadow: 8px 8px #000;
+}
+
+/* Partners Section Styles */
+.partners-section {
+    padding: 70px 120px; /* Padding for top/bottom and left/right */
+    text-align: center; /* Center align text */
+    background-color: #f9f9f9; /* Light background color for contrast */
+}
+
+
+.partners-container {
+    display: grid; /* Use grid layout */
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive columns */
+    gap: 25px; /* Space between images (adjust as needed) */
+    justify-content: center; /* Center align grid items */
+}
+
+.partner-logo {
+    max-width: 100%; /* Ensure logos are responsive */
+    height: auto; /* Maintain aspect ratio */
+    border: none; /* Optional border around logos */
+    border-radius: none; /* Optional rounded corners */
+    padding: 10px; /* Optional padding inside the border */
+    background-color: none; /* Background color inside the border */
+}
+
+/* History Section Styles */
+.history-section {
+    position: relative;
+    height: 100vh; /* Full viewport height */
+    background-image: url('img/back2.jpg'); /* Replace with your background image */
+    background-size: cover; /* Ensure the image covers the section */
+    background-position: right center; /* Focus on the right side where the person is */
+    background-repeat: no-repeat; /* Prevent repeating */
+    display: flex;
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+    padding: 20px; /* Padding for smaller screens */
+    box-sizing: border-box;
+}
+
+.history-content {
+    display: flex;
+    align-items: center; /* Align items in the center vertically */
+    justify-content: center; /* Center items horizontally */
+    max-width: 1200px; /* Maximum width of the content */
+    width: 100%; /* Full width of the section */
+    text-align: center; /* Center align text */
+    
+    padding: 40px; /* Padding around the content */
+   
+    z-index: 1; /* Ensure content is above background image */
+    margin-right: 20%; /* Push the content to the left by adjusting the right margin */
+}
+.text-container {
+    max-width: 600px; /* Maximum width of the text container */
+}
+
+.history-heading {
+    font-size: 36px; /* Heading font size */
+    color: #333; /* Heading color */
+    margin-bottom: 20px; /* Space below the heading */
+}
+
+.history-paragraph {
+    font-size: 18px; /* Paragraph font size */
+    color: #ffffff; /* Paragraph color */
+    line-height: 1.6; /* Line height for readability */
+    margin-bottom: 20px; /* Space below the paragraph */
+}
+
+.history-button {
+    display: inline-block;
+    background-color: #FDD247; /* Background color for the button */
+    color: #fff; /* Text color for the button */
+    font-size: 18px; /* Font size for the button */
+    padding: 15px 35px; /* Padding inside the button */
+    border-radius: 5px; /* Rounded corners for the button */
+    text-decoration: none; /* Remove underline */
+    transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transition */
+}
+
+.history-button:hover {
+    box-shadow: 8px 8px #000;
+}
+
+/* Counter Section Styles */
+.counter-section {
+    padding: 70px 20px;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+.counter-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.counter-title {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.counter-description {
+    font-size: 18px;
+    margin-bottom: 30px;
+    color: #666;
+}
+
+.counters-container {
+    display: flex;
+    justify-content: center; /* Center align the counters */
+    flex-wrap: wrap;
+    gap: 10px; /* Small gap between counter items */
+    margin-bottom: 30px;
+}
+
+.counter-item {
+    flex: 1 1 200px; /* Flex-grow and flex-shrink values adjusted */
+    max-width: 230px; /* Adjusted max-width for better alignment */
+    padding: 15px; /* Reduced padding for more compact look */
+    
+    display: flex; /* Added to align contents */
+    flex-direction: column;
+    align-items: center; /* Center align items vertically */
+    text-align: center; /* Ensure text is centered */
+}
+
+.counter-number {
+    font-size: 48px;
+    color: #333;
+    margin-bottom: 10px;
+    white-space: nowrap; /* Prevent line break */
+    overflow: hidden; /* Ensure no overflow */
+    text-overflow: ellipsis; /* Ellipsis if text is too long */
+}
+
+.counter-name {
+    font-size: 16px;
+    color: #666;
+}
+
+.counter-button {
+    display: inline-block;
+    background-color: #FDD247;
+    color: #fff;
+    font-size: 18px;
+    padding: 15px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.counter-button:hover {
+    box-shadow: 8px 8px #000;
+}
+
+
+.testimonial-section {
+    padding: 70px 20px;
+    background: url('img/back3.jpg') no-repeat center center; /* Background image */
+    background-size: cover; /* Ensure the image covers the section */
+    padding: 0 20px;
+    background-color: rgba(51, 51, 51, 0.5);
+    background-blend-mode: multiply; /* Blend mode to darken background */
+    color: #fff;
+    text-align: center;
+    position: relative;
+    overflow: hidden; /* Hide overflow for slider */
+}
+
+.testimonial-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 30px;
+    position: relative;
+}
+
+.testimonial-title {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.testimonial-name {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #FFD700; /* Gold color */
+}
+
+.rating {
+    margin-bottom: 20px;
+}
+
+.rating i {
+    color: #FFD700; /* Gold color for stars */
+    font-size: 24px;
+}
+
+.testimonial-line {
+    border: 0;
+    border-top: 2px solid #FFD700; /* Gold line */
+    margin: 20px auto;
+    width: 50%;
+}
+
+.testimonial-description {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.testimonial-number {
+    display: block;
+    margin: 20px auto;
+    font-size: 18px;
+    color: #FFD700; /* Gold color */
+}
+
+.testimonial-button {
+    display: inline-block;
+    background-color: #FDD247;
+    color: #fff;
+    font-size: 18px;
+    padding: 15px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.testimonial-button:hover {
+    box-shadow: 8px 8px #000;
+}
+
+/* Slider Controls */
+.slider-controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    z-index: 10; /* Ensure slider buttons are on top */
+}
+
+.slider-button {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 24px;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+}
+
+.slider-button:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Ensure only one slide is shown at a time */
+.testimonial-slide {
+    display: none; /* Hide slides by default */
+}
+
+/* Show the current slide */
+.testimonial-slide.active {
+    display: block;
+}
+
+.contact-section {
+    padding: 70px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.contact-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contact-logo img {
+    max-width: 150px;
+    margin-bottom: 20px;
+}
+
+.contact-description {
+    font-size: 18px;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    font-size: 18px;
+    color: #666;
+}
+
+/* contact page */
+.contact-section {
+    padding: 70px 20px;
+    background-color: #000;
+    text-align: center;
+    border-bottom: 1px #fcb900;
+}
+
+.contact-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contact-logo img {
+    max-width: 150px;
+    margin-bottom: 20px;
+}
+
+.contact-description {
+    font-size: 18px;
+    margin-bottom: 30px;
+    color: #fff;
+}
+
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    font-size: 18px;
+    color: #fff;
+}
+
+.contact-item i {
+    font-size: 24px;
+    margin-right: 10px;
+    color: #FDD247;
+}
+
+.contact-text {
+    font-size: 18px;
+    display: inline-block; /* Ensure text aligns with icons */
+}
+
+.social-media {
+    display: flex;
+    justify-content: center;
+    gap: 40px; /* Small gap between social icons */
+}
+
+.social-icon {
+    font-size: 24px;
+    color: #333;
+    transition: color 0.3s;
+}
+
+.social-icon:hover {
+    color: #FDD247; /* Color change on hover */
+}
+
+/* responsive part */
+@media screen and (max-width: 1200px) {
+    .hero {
+        background-position: center center; /* Center the image for medium screens */
+    }
+    .hero h1 {
+        font-size: 5vw; /* Adjust font size for medium screens */
+    }
+
+    .typing-container {
+        font-size: 2vw; /* Adjust font size for medium screens */
+    }
+    .info-section {
+        padding: 50px 60px; /* Adjust padding for tablets */
+    }
+
+    .info-heading {
+        font-size: 30px; /* Smaller font size for headings */
+    }
+
+    .info-paragraph {
+        font-size: 16px; /* Slightly smaller text */
+    }
+    .partners-section {
+        padding: 50px 60px; /* Adjust padding for tablets */
+    }
+
+    .partners-container {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Smaller minimum size for logos */
+        gap: 20px; /* Reduced gap for smaller screens */
+    }
+    .history-section {
+        background-position: center right; /* Focus on right side */
+    }
+
+    .history-content {
+        padding: 30px; /* Reduce padding on medium screens */
+        margin-right: 15%; /* Adjust margin for medium screens */
+    }
+    .counter-title {
+        font-size: 32px;
+    }
+
+    .counter-description {
+        font-size: 16px;
+    }
+}
+@media (max-width: 992px) {
+    .counter-title {
+        font-size: 28px;
+    }
+
+    .counter-description {
+        font-size: 14px;
+    }
+
+    .counter-item {
+        flex: 1 1 150px; /* Reduce size for smaller screens */
+        max-width: 180px; /* Adjust max-width for better fit */
+    }
+
+    .counter-number {
+        font-size: 40px; /* Adjust font size for smaller screens */
+    }
+
+    .counter-name {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    nav {
+        padding: 40px 30px; /* Adjust padding for smaller screens */
+        flex-direction: row; /* Ensure elements are in a row */
+        justify-content: space-between; /* Space out the logo and burger menu */
+        align-items: center; /* Vertically center items */
+    }
+
+    .logo {
+        margin-right: 20px; /* Add space between the logo and the burger menu */
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 70px; /* Adjust top position to fit below the navbar */
+        left: 0;
+        background-color: white; /* Ensure background color on mobile */
+    }
+
+    .nav-links.nav-active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .burger {
+        display: block;
+        margin-left: 0; /* Remove margin-left for burger on small screens */
+    }
+
+    .logo img {
+        height: 30px;
+    }
+    .hero {
+        height: 60vh; /* Adjust height for smaller screens */
+        background-position: top center; /* Adjust position for smaller screens */
+    }
+
+    .hero h1 {
+        font-size: 6vw; /* Adjust font size for smaller screens */
+    }
+
+    .typing-container {
+        font-size: 2.5vw; /* Adjust font size for smaller screens */
+    }
+    .info-section {
+        padding: 40px 20px; /* Adjust padding for smaller tablets */
+    }
+
+    .info-heading {
+        font-size: 25px; /* Smaller font size for headings */
+    }
+
+    .info-paragraph {
+        font-size: 14px; /* Smaller text for readability */
+    }
+
+    .services-container {
+        flex-direction: column; /* Stack service items vertically */
+        align-items: center; /* Center align items */
+    }
+
+    .service-item {
+        max-width: 100%; /* Allow items to take full width */
+    }
+
+    .cta-button {
+        font-size: 16px; /* Adjust font size for smaller screens */
+        padding: 10px 25px; /* Adjust padding for smaller screens */
+    }
+    .partners-section {
+        padding: 40px 20px; /* Adjust padding for smaller tablets */
+    }
+
+    .partners-container {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Even smaller logos for smaller screens */
+        gap: 15px; /* Reduced gap for smaller screens */
+    }
+
+    .partner-logo {
+        padding: 5px; /* Reduce padding around logos */
+    }
+    .history-section {
+        background-position: center center; /* Center the image */
+        background-size: cover; /* Ensure the image covers the section */
+    }
+
+    .history-content {
+        padding: 20px; /* Reduce padding on smaller screens */
+        margin-right: 10%; /* Adjust margin for smaller screens */
+    }
+    .history-heading {
+        font-size: 28px; /* Reduce heading font size */
+    }
+
+    .history-paragraph {
+        font-size: 16px; /* Reduce paragraph font size */
+    }
+
+    .history-button {
+        font-size: 16px; /* Reduce button font size */
+        padding: 12px 25px; /* Adjust padding */
+    }
+    .counter-title {
+        font-size: 24px;
+    }
+
+    .counter-description {
+        font-size: 12px;
+    }
+
+    .counter-item {
+        flex: 1 1 100%; /* Full width for small screens */
+        max-width: 100%; /* Ensure full width */
+        padding: 10px; /* Adjust padding */
+    }
+
+    .counter-number {
+        font-size: 32px; /* Adjust font size */
+    }
+
+    .counter-name {
+        font-size: 12px;
+    }
+
+    .counter-button {
+        font-size: 16px; /* Adjust font size */
+        padding: 10px 20px; /* Adjust padding */
+    }
+    .testimonial-title {
+        font-size: 28px;
+    }
+
+    .testimonial-name {
+        font-size: 20px;
+    }
+
+    .testimonial-description {
+        font-size: 16px;
+    }
+
+    .testimonial-number {
+        font-size: 16px;
+    }
+
+    .testimonial-button {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+    .contact-description {
+        font-size: 16px;
+    }
+
+    .contact-item {
+        font-size: 16px;
+    }
+
+    .contact-item i {
+        font-size: 20px;
+    }
+
+    .social-icon {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .logo img {
+        height: 20px;
+    }
+    .hero {
+        height: 50vh; /* Further adjust height for very small screens */
+        padding: 0 10px; /* Reduce padding for smaller screens */
+        background-position: top left; /* Adjust position for very small screens */
+    }
+
+    .hero h1 {
+        font-size: 7vw; /* Adjust font size for very small screens */
+    }
+    .typing-container {
+        font-size: 3vw; /* Adjust font size for very small screens */
+        height: 30px; /* Adjust height for smaller screens */
+    }
+    .info-heading {
+        font-size: 20px; /* Further reduce font size */
+    }
+
+    .info-paragraph {
+        font-size: 12px; /* Adjust text size */
+    }
+
+    .cta-button {
+        font-size: 14px; /* Adjust font size */
+        padding: 8px 20px; /* Adjust padding */
+    }
+    .partners-section {
+        padding: 30px 10px; /* Adjust padding for mobile devices */
+    }
+
+    .partners-container {
+        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); /* Very small logos for mobile screens */
+        gap: 10px; /* Further reduced gap */
+    }
+
+    .partner-logo {
+        padding: 3px; /* Further reduced padding around logos */
+    }
+    .history-heading {
+        font-size: 24px; /* Further reduce heading font size */
+    }
+
+    .history-paragraph {
+        font-size: 14px; /* Further reduce paragraph font size */
+    }
+
+    .history-button {
+        font-size: 14px; /* Further reduce button font size */
+        padding: 10px 20px; /* Adjust padding */
+    }
+    .counter-title {
+        font-size: 20px;
+    }
+
+    .counter-description {
+        font-size: 10px;
+    }
+
+    .counter-number {
+        font-size: 28px; /* Adjust font size */
+    }
+
+    .counter-name {
+        font-size: 10px;
+    }
+
+    .counter-button {
+        font-size: 14px; /* Adjust font size */
+        padding: 8px 16px; /* Adjust padding */
+    }
+}
