@@ -2,16 +2,9 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    top: 0 !important;
+    
 }
 /* Hide Google Translate toolbar */
-body > .skiptranslate {
-    display: none;
-}
-
-body > .goog-te-banner-frame {
-    display: none !important;
-}
 
 /* Fixed Navbar */
 nav {
@@ -57,7 +50,7 @@ nav {
     
 }
 .nav-links li {
-    margin: 0 15px;
+    margin: 0 10px;
     text-align: center;
 }
 
