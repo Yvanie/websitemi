@@ -2,6 +2,15 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    top: 0 !important;
+}
+/* Hide Google Translate toolbar */
+body > .skiptranslate {
+    display: none;
+}
+
+body > .goog-te-banner-frame {
+    display: none !important;
 }
 
 /* Fixed Navbar */
@@ -18,8 +27,9 @@ nav {
     z-index: 1000; /* Ensures the navbar stays above other content */
     box-sizing: border-box; /* Includes padding and border in the element's total width and height */
 }
+
 .logo img {
-    height: 40px;
+    height: 70px;
     width: auto;
 }
 
@@ -37,7 +47,7 @@ nav {
     background-color: white;
 }
 .nav-links .nav-link.active {
-    color: #fcb900; /* Change to your preferred color */
+    color: #0693e3; /* Change to your preferred color */
     font-weight: bold; /* Optional: Make the active link bold */
 }
 .nav-links.nav-active {
@@ -46,7 +56,6 @@ nav {
     background-color: #ffffff;
     
 }
-
 .nav-links li {
     margin: 0 15px;
     text-align: center;
@@ -61,9 +70,8 @@ nav {
 }
 
 .nav-links a:hover {
-    color: #fcb900;
+    color: #0693e3;
 }
-
 .burger {
     display: none;
     cursor: pointer;
@@ -129,11 +137,11 @@ nav {
     font-size: 20px;
     white-space: nowrap;
     overflow: hidden;
-    color: #FDD247; /* Text color */
+    color: #0693e3; /* Text color */
     height: 40px; /* Height for the container */
     position: relative;
     display: inline-block;
-    border-right: 2px solid #FDD247; /* Blinking cursor */
+    border-right: 2px solid #0693e3; /* Blinking cursor */
     animation: blink-caret 0.7s step-end infinite; /* Blinking caret effect */
 }
 
@@ -145,7 +153,7 @@ nav {
     right: 0;
     width: 2px; /* Match the border width */
     height: 100%;
-    background-color: #FDD247; /* Match the cursor color */
+    background-color: #0693e3; /* Match the cursor color */
     animation: blink-caret 0.7s step-end infinite; /* Blinking effect */
 }
 
@@ -161,7 +169,7 @@ nav {
 /* Text select simulation */
 .selected-text {
     background-color: #333; /* Background color when "selected" */
-    color: #FDD247; /* Text color change when "selected" */
+    color: #0693e3; /* Text color change when "selected" */
     display: inline; /* Ensure the background color fits the text width */  
 }
 
@@ -246,7 +254,7 @@ nav {
 
 .cta-button {
     display: inline-block;
-    background-color: #FDD247; /* Background color */
+    background-color: #0693e3; /* Background color */
     color: #fff; /* Text color */
     font-size: 18px; /* Font size */
     padding: 15px 35px; /* Padding for the button */
@@ -330,7 +338,7 @@ nav {
 
 .history-button {
     display: inline-block;
-    background-color: #FDD247; /* Background color for the button */
+    background-color: #0693e3; /* Background color for the button */
     color: #fff; /* Text color for the button */
     font-size: 18px; /* Font size for the button */
     padding: 15px 35px; /* Padding inside the button */
@@ -401,7 +409,7 @@ nav {
 
 .counter-button {
     display: inline-block;
-    background-color: #FDD247;
+    background-color: #0693e3;
     color: #fff;
     font-size: 18px;
     padding: 15px 30px;
@@ -443,7 +451,7 @@ nav {
 .testimonial-name {
     font-size: 24px;
     margin-bottom: 10px;
-    color: #FFD700; /* Gold color */
+    color: #00d084; /* Gold color */
 }
 
 .rating {
@@ -457,7 +465,7 @@ nav {
 
 .testimonial-line {
     border: 0;
-    border-top: 2px solid #FFD700; /* Gold line */
+    border-top: 2px solid #0693e3; /* Gold line */
     margin: 20px auto;
     width: 50%;
 }
@@ -471,12 +479,12 @@ nav {
     display: block;
     margin: 20px auto;
     font-size: 18px;
-    color: #FFD700; /* Gold color */
+    color: #00d084; /* Gold color */
 }
 
 .testimonial-button {
     display: inline-block;
-    background-color: #FDD247;
+    background-color: #0693e3;
     color: #fff;
     font-size: 18px;
     padding: 15px 30px;
@@ -567,7 +575,7 @@ nav {
     padding: 70px 20px;
     background-color: #000;
     text-align: center;
-    border-bottom: 1px #fcb900;
+    border-bottom: 1px #0693e3;
 }
 
 .contact-content {
@@ -604,7 +612,7 @@ nav {
 .contact-item i {
     font-size: 24px;
     margin-right: 10px;
-    color: #FDD247;
+    color: #0693e3;
 }
 
 .contact-text {
@@ -625,7 +633,7 @@ nav {
 }
 
 .social-icon:hover {
-    color: #FDD247; /* Color change on hover */
+    color: #0693e3; /* Color change on hover */
 }
 
 /* responsive part */
