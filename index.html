@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>James webiste Client</title>
+    <title>Expert for real estate financing | Financing advisor Bavaria</title>
     <link rel="icon" href="https://yvanie.github.io/websitemi/img/logo.png">
     <meta property="og:site_name" content="James website" />
     <meta property=“og:title” content="Personal Website" />
@@ -20,13 +20,13 @@
 <body>
     <nav>
         <div class="logo">
-            <img src="img/logo.png" alt="Logo">
+            <a href="#home" class="nav-link"><img src="img/logo.png" alt="Logo"></a>
         </div>
         <ul class="nav-links">
             <li><a href="#home" class="nav-link">Acceuil</a></li>
             <li><a href="#about"class="nav-link">A Propos</a></li>
+            <li><a href="#history" class="nav-link">Jocelyn</a></li>
             <li><a href="#partners" class="nav-link">Partenaire</a></li>
-            <li><a href="#history" class="nav-link">Felix</a></li>
             <li><a href="#testimonial" class="nav-link">Témoignages</a></li>
             <li><a href="#contact" class="nav-link">Contactez nous</a></li>
             <div id="google_translate_element"></div>
@@ -79,8 +79,23 @@
                 </p>
             </div>
         </div>
-        <div class="cta-container">
+        <!--<div class="cta-container">
             <a href="#contact" class="cta-button">Qu'elle banque est faite pour vous?</a>
+        </div>-->
+    </section>
+ 
+    <section class="history-section" id="history">
+        <div class="history-content">
+            <div class="text-container">
+                <h2 class="history-heading">Salut, je m'appelle Jocelyn.</h2>
+                <p class="history-paragraph">
+                    Depuis ma jeunesse je me suis toujours interessé a l´immobilier. Apres mes études universitaires et mes expériences professionelles gagnées dans différents domaines, j´ai décidé de me spécialiser dans le financement immobilier.
+                </p>
+                <p class="history-paragraph">Comme courtier Immobilier certifié IHK, ma passion est d´accompagner mes clients de facon indépendante a trouver la meilleure solution pour leur financement immobilier.</p>
+                <p class="history-paragraph">Ma préoccupation premiere reste la satisfaction des clients.</p>
+                <p class="history-paragraph">Pendant mes heures libres j´aime bien lire et jouer au football</p>
+                <!--<a href="#learn-more" class="history-button">Faissons connaissance</a>-->
+            </div>
         </div>
     </section>
     <section class="partners-section" id="partners">
@@ -106,21 +121,7 @@
             <img src="img/part4.png" alt="Partner 4" class="partner-logo">
         </div>
     </section>
-    <section class="history-section" id="history">
-        <div class="history-content">
-            <div class="text-container">
-                <h2 class="history-heading">Salut, je m'appelle Félix.</h2>
-                <p class="history-paragraph">
-                    Depuis ma jeunesse je me suis toujours interessé a l´immobilier. Apres mes études universitaires et mes expériences professionelles gagnées dans différents domaines, j´ai décidé de me spécialiser dans le financement immobilier.
-                </p>
-                <p class="history-paragraph">Comme courtier Immobilier certifié IHK, ma passion est d´accompagner mes clients de facon indépendante a trouver la meilleure solution pour leur financement immobilier.</p>
-                <p class="history-paragraph">Ma préoccupation premiere reste la satisfaction des clients.</p>
-                <p class="history-paragraph">Pendant mes heures libres j´aime bien lire et jouer au football</p>
-                <a href="#learn-more" class="history-button">Faissons connaissance</a>
-            </div>
-        </div>
-    </section>
-    <section class="counter-section" >
+    <!--<section class="counter-section" >
         <div class="counter-content">
             <h2 class="counter-title">Faites confiance aux chiffres</h2>
             <p class="counter-description">
@@ -142,10 +143,10 @@
             </div>
             <a href="#contact" class="counter-button">Obtenez des conseils</a>
         </div>
-    </section>
+    </section> -->
     <section class="testimonial-section" id="testimonial">
         <div class="testimonial-content">
-            <h2 class="testimonial-title">What Our Clients Say</h2>
+            <h2 class="testimonial-title">Ce que disent nos clients</h2>
             <!-- Testimonial 1 -->
             <div class="testimonial-slide">
                 
@@ -162,7 +163,7 @@
                     Our clients have seen tremendous growth and success by using our services.
                 </p>
                 <span class="testimonial-number">1/2</span>
-                <a href="#contact" class="testimonial-button">Devenez vous aussi un client satisfait</a>
+                <!--<a href="#contact" class="testimonial-button">Devenez vous aussi un client satisfait</a>-->
             </div>
             <!-- Testimonial 2 -->
             <div class="testimonial-slide">
@@ -179,7 +180,7 @@
                     An exceptional experience! Their professionalism and dedication were truly outstanding.
                 </p>
                 <span class="testimonial-number">2/2</span>
-                <a href="#contact" class="testimonial-button">Contactez-nous pour plus d'informations</a>
+                <!--<a href="#contact" class="testimonial-button">Contactez-nous pour plus d'informations</a>-->
             </div>
             <!-- Slider controls -->
             <div class="slider-controls">
@@ -189,32 +190,51 @@
         </div>
     </section>
     <section class="contact-section" id="contact">
-        <div class="contact-content">
+        <h2>Contact Us</h2>
+        <form id="contactForm">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+            </div>
+            <button class="btn" type="submit">Submit</button>
+        </form>
+        <div id="formMessage"></div>
+    </section>
+    <footer class="footer-section">
+        <div class="footer-content">
             <!-- Logo -->
-            <div class="contact-logo">
+            <div class="footer-logo">
                 <img src="img/logo.png" alt="Company Logo">
             </div>
     
             <!-- Description -->
-            <p class="contact-description">
+            <p class="footer-description">
                 Je suis votre conseiller financier à Augsbourg pour des conseils financiers de premier ordre,
                  des investissements, un financement immobilier, une création de richesse durable par le biais 
                  de fonds/ETF, un bien immobilier autofinancé, une optimisation de l'assurance, une liberté financière.
             </p>
     
             <!-- Contact Details -->
-            <div class="contact-details">
-                <div class="contact-item">
+            <div class="footer-details">
+                <div class="footer-item">
                     <i class="fas fa-phone-alt"></i>
-                    <span class="contact-text">+1 (234) 567-890</span>
+                    <span class="footer-text">+1 (234) 567-890</span>
                 </div>
-                <div class="contact-item">
+                <div class="footer-item">
                     <i class="fas fa-map-marker-alt"></i>
-                    <span class="contact-text">1234 Main Street, City, Country</span>
+                    <span class="footer-text">1234 Main Street, City, Country</span>
                 </div>
-                <div class="contact-item">
+                <div class="footer-item">
                     <i class="fas fa-envelope"></i>
-                    <span class="contact-text">info@example.com</span>
+                    <span class="footer-text">info@example.com</span>
                 </div>
             </div>
     
@@ -234,7 +254,7 @@
                 </a>
             </div>
         </div>
-    </section>
+    </footer>
     <script type="text/javascript">
         function googleTranslateElementInit() {
           console.log('Google Translate Element Initialization'); // Debugging line

@@ -177,3 +177,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
     setInterval(nextSlide, 5000); // Automatically switch slides every 5 seconds
 });
+
+document.getElementById('contactForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+    const formMessage = document.getElementById('formMessage');
+
+    if (name && email && message) {
+        formMessage.textContent = 'Thank you for your message!';
+        formMessage.style.color = 'green';
+    } else {
+        formMessage.textContent = 'Please fill out all fields.';
+    }
+});

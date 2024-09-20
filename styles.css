@@ -4,6 +4,9 @@ body {
     padding: 0;
     
 }
+
+/* 1170 px */
+
 html {
   scroll-behavior: smooth; /* Smooth scrolling for all anchor links */
 }
@@ -25,7 +28,7 @@ nav {
 }
 
 .logo img {
-    height: 70px;
+    height: 120px;
     width: auto;
 }
 
@@ -58,7 +61,7 @@ nav {
 }
 
 .nav-links a {
-    color: black;
+    color: rgba(0,0,0,0.5);
     text-decoration: none;
     font-size: 18px;
     padding: 10px;
@@ -104,7 +107,7 @@ nav {
     color: #fff;
     text-align: center;
     background-color: rgba(51, 51, 51, 0.5); /* Semi-transparent background color */
-    background-image: url('img/background.jpg');
+    background-image: url('img/scale_img_about_me.png');
     background-size: cover;
     background-position: center top; /* Push image down */
     background-repeat: no-repeat;
@@ -130,11 +133,11 @@ nav {
 }
 
 .typing-container {
-    font-size: 20px;
+    font-size: 50px;
     white-space: nowrap;
     overflow: hidden;
     color: #0693e3; /* Text color */
-    height: 40px; /* Height for the container */
+    height: 100%; /* Height for the container */
     position: relative;
     display: inline-block;
     border-right: 2px solid #0693e3; /* Blinking cursor */
@@ -179,6 +182,10 @@ nav {
     text-align:center;
     font-size: 35px;
 }
+.info-paragraph{
+    padding-left: 120px;
+    padding-right: 100px;
+}
 
 /* Centered Title and Description */
 .services-info {
@@ -220,10 +227,10 @@ nav {
    /*  background-color: #f4f4f4; */
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);*/
 }
 .service-item svg{
-    width: 100px;
+    width: 50px;
 }
 .service-icon {
     width: 50px;
@@ -270,16 +277,17 @@ nav {
     background-color: #f9f9f9; /* Light background color for contrast */
 }
 
-
 .partners-container {
-    display: grid; /* Use grid layout */
+    display: block; /* Use grid layout */
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive columns */
     gap: 25px; /* Space between images (adjust as needed) */
     justify-content: center; /* Center align grid items */
+    padding-left: 10%;
+    padding-right: 10%;
 }
 
 .partner-logo {
-    max-width: 100%; /* Ensure logos are responsive */
+    max-width: 10%; /* Ensure logos are responsive */
     height: auto; /* Maintain aspect ratio */
     border: none; /* Optional border around logos */
     border-radius: none; /* Optional rounded corners */
@@ -291,7 +299,7 @@ nav {
 .history-section {
     position: relative;
     height: 100vh; /* Full viewport height */
-    background-image: url('img/back2.jpg'); /* Replace with your background image */
+    background-image: url('img/img_about_me_2.png'); /* Replace with your background image */
     background-size: cover; /* Ensure the image covers the section */
     background-position: right center; /* Focus on the right side where the person is */
     background-repeat: no-repeat; /* Prevent repeating */
@@ -421,10 +429,10 @@ nav {
 
 .testimonial-section {
     padding: 70px 20px;
-    background: url('img/back3.jpg') no-repeat center center; /* Background image */
+    /* background: url('img/back3.jpg') no-repeat center center; /* Background image */
     background-size: cover; /* Ensure the image covers the section */
     padding: 0 20px;
-    background-color: rgba(51, 51, 51, 0.5);
+    background-color: rgba(23, 58, 58, 0.842);
     background-blend-mode: multiply; /* Blend mode to darken background */
     color: #fff;
     text-align: center;
@@ -529,75 +537,99 @@ nav {
     display: block;
 }
 
+/* contact section */
 .contact-section {
     padding: 70px 20px;
-    background-color: #f9f9f9;
+    background: #fff;
     text-align: center;
 }
 
-.contact-content {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.contact-logo img {
-    max-width: 150px;
+.contact-section h2 {
     margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+    text-align: center;
 }
 
-.contact-description {
-    font-size: 18px;
-    margin-bottom: 30px;
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
     color: #333;
 }
 
-.contact-details {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 30px;
+.form-group input,
+.form-group textarea {
+    width: 50%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
 
-.contact-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
-    font-size: 18px;
-    color: #666;
+.form-group textarea {
+    resize: vertical;
+    height: 100px;
 }
 
-/* contact page */
-.contact-section {
+.btn {
+    width: 50%;
+    padding: 10px;
+    background-color: #0693e3;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+#formMessage {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #d9534f;
+    text-align: center;
+}
+
+/* footer page */
+.footer-section {
     padding: 70px 20px;
-    background-color: #000;
+    background-color: #475c72;
     text-align: center;
     border-bottom: 1px #0693e3;
 }
 
-.contact-content {
+.footer-content {
     max-width: 800px;
     margin: 0 auto;
 }
 
-.contact-logo img {
+.footer-logo img {
     max-width: 150px;
     margin-bottom: 20px;
 }
 
-.contact-description {
+.footer-description {
+    letter-spacing: 1.2px;
+    line-height: 25px;
     font-size: 18px;
     margin-bottom: 30px;
-    color: #fff;
+    color: #ffffff;
 }
 
-.contact-details {
+.footer-details {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-bottom: 30px;
 }
 
-.contact-item {
+.footer-item {
     display: flex;
     align-items: center;
     margin-bottom: 15px;
@@ -605,13 +637,13 @@ nav {
     color: #fff;
 }
 
-.contact-item i {
+.footer-item i {
     font-size: 24px;
     margin-right: 10px;
     color: #0693e3;
 }
 
-.contact-text {
+.footer-text {
     font-size: 18px;
     display: inline-block; /* Ensure text aligns with icons */
 }
@@ -624,7 +656,7 @@ nav {
 
 .social-icon {
     font-size: 24px;
-    color: #333;
+    color: #ffffff;
     transition: color 0.3s;
 }
 
@@ -680,6 +712,36 @@ nav {
     }
 }
 @media (max-width: 992px) {
+    .logo {
+        margin-right: 20px; /* Add space between the logo and the burger menu */
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 70px; /* Adjust top position to fit below the navbar */
+        left: 0;
+        background-color: white; /* Ensure background color on mobile */
+    }
+
+    .nav-links.nav-active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .burger {
+        display: block;
+        margin-left: 0; /* Remove margin-left for burger on small screens */
+    }
+
+    .logo img {
+        height: 80px;
+    }
     .counter-title {
         font-size: 28px;
     }
@@ -738,7 +800,7 @@ nav {
     }
 
     .logo img {
-        height: 30px;
+        height: 80px;
     }
     .hero {
         height: 60vh; /* Adjust height for smaller screens */
@@ -856,15 +918,15 @@ nav {
         font-size: 16px;
         padding: 10px 20px;
     }
-    .contact-description {
+    .footer-description {
         font-size: 16px;
     }
 
-    .contact-item {
+    .footer-item {
         font-size: 16px;
     }
 
-    .contact-item i {
+    .footer-item i {
         font-size: 20px;
     }
 
@@ -872,10 +934,16 @@ nav {
         font-size: 20px;
     }
 }
-
+@media (min-width: 600px) {
+    .form-group input,
+    .form-group textarea,
+    .btn {
+        width: 50%;
+    }
+}
 @media screen and (max-width: 480px) {
     .logo img {
-        height: 50px;
+        height: 70px;
     }
     .hero {
         height: 50vh; /* Further adjust height for very small screens */
