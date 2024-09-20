@@ -4,6 +4,9 @@ body {
     padding: 0;
     
 }
+html {
+  scroll-behavior: smooth; /* Smooth scrolling for all anchor links */
+}
 /* Hide Google Translate toolbar */
 
 /* Fixed Navbar */
@@ -872,7 +875,7 @@ nav {
 
 @media screen and (max-width: 480px) {
     .logo img {
-        height: 20px;
+        height: 50px;
     }
     .hero {
         height: 50vh; /* Further adjust height for very small screens */

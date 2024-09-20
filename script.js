@@ -7,25 +7,47 @@ $(document).ready(function() {
 });
 
 //active navlink
-const sections = document.querySelectorAll('section');
-const navLinks = document.querySelectorAll('.nav-link');
+document.addEventListener('DOMContentLoaded', () => {
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.nav-link');
+    const navHeight = document.querySelector('nav').offsetHeight; // Height of the fixed navbar
 
-window.addEventListener('scroll', () => {
-    let current = '';
+    // Add click event listeners to nav links for smooth scrolling
+    navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault(); // Prevent default anchor behavior
 
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        if (pageYOffset >= sectionTop - sectionHeight / 3) {
-            current = section.getAttribute('id');
-        }
+            const targetId = link.getAttribute('href').substring(1); // Get the target section id
+            const targetSection = document.getElementById(targetId); // Get the target section element
+
+            if (targetSection) {
+                window.scrollTo({
+                    top: targetSection.offsetTop - navHeight, // Adjust for navbar height
+                    behavior: 'smooth' // Smooth scrolling
+                });
+            }
+        });
     });
 
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href').includes(current)) {
-            link.classList.add('active');
-        }
+    // Update active link based on scroll position
+    window.addEventListener('scroll', () => {
+        let current = '';
+
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - navHeight; // Adjust for navbar height
+            const sectionHeight = section.clientHeight;
+
+            if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
+                current = section.getAttribute('id');
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href').substring(1) === current) {
+                link.classList.add('active');
+            }
+        });
     });
 });
 // For the typing and wiping effect, we need to add some JavaScript to handle the timing and looping
